@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlantSOS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="PlantSOS home"></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false">
+        ☰
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#diagnose">Plant doctor</a>
+        <a href="#library">Plant library</a>
+        <a href="#guides">Care guides</a>
+      </nav>
+      <a class="header-cta" href="#diagnose">Check a plant <span>↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero section-shell" id="home">
+        <div class="hero-copy">
+          <h1>Not looking<br />so <em>leafy?</em></h1>
+          <p class="hero-lede">
+            Your plant can't tell you what's wrong. But we can read the signs,
+            understand what might be happening, and take the next best step.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#diagnose">
+              Diagnose a plant <span>→</span></a
+            >
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="hero-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1446071103084-c257b5f70672?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="diagnosis-section section-shell section-pad"
+        id="diagnose"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE PLANT DOCTOR</p>
+            <h2>Let's figure out<br /><em>what's going on.</em></h2>
+          </div>
+        </div>
+        <form id="diagnosisForm" class="diagnosis-card">
+          <div class="form-topline">
+            <span class="form-step">YOUR PLANT CHECK-IN</span>
+          </div>
+          <div class="form-grid">
+            <div class="field-group full-width">
+              <label for="plantName">What plant are we checking? </label>
+              <input
+                id="plantName"
+                name="plantName"
+                type="text"
+                placeholder="e.g. Monstera, peace lily, or just 'my leafy friend'"
+              />
+            </div>
+            <fieldset class="field-group full-width">
+              <legend>
+                What are you noticing?
+                <span class="required">Choose at least one</span>
+              </legend>
+              <div class="symptom-grid">
+                <label class="symptom-option"
+                  ><input type="checkbox" name="symptoms" value="yellow" /><span
+                    class="symptom-emoji"
+                    >🍂</span
+                  ><span
+                    ><strong>Yellow leaves</strong
+                    ><small>All over or in patches</small></span
+                  ></label
+                >
+                <label class="symptom-option"
+                  ><input type="checkbox" name="symptoms" value="brown" /><span
+                    class="symptom-emoji"
+                    >🥀</span
+                  ><span
+                    ><strong>Brown / crispy edges</strong
+                    ><small>Dry tips or leaf edges</small></span
+                  ></label
+                >
+                <label class="symptom-option"
+                  ><input
+                    type="checkbox"
+                    name="symptoms"
+                    value="drooping"
+                  /><span class="symptom-emoji">🌿</span
+                  ><span
+                    ><strong>Drooping or wilting</strong
+                    ><small>Leaves or stems feel limp</small></span
+                  ></label
+                >
+                <label class="symptom-option"
+                  ><input type="checkbox" name="symptoms" value="spots" /><span
+                    class="symptom-emoji"
+                    >🔎</span
+                  ><span
+                    ><strong>Spots or patches</strong
+                    ><small>Dark, pale or unusual marks</small></span
+                  ></label
+                >
+                <label class="symptom-option"
+                  ><input type="checkbox" name="symptoms" value="pests" /><span
+                    class="symptom-emoji"
+                    >🐛</span
+                  ><span
+                    ><strong>Tiny bugs / webbing</strong
+                    ><small>Something is moving or sticking</small></span
+                  ></label
+                >
+                <label class="symptom-option"
+                  ><input type="checkbox" name="symptoms" value="slow" /><span
+                    class="symptom-emoji"
+                    >🐌</span
+                  ><span
+                    ><strong>Not growing much</strong
+                    ><small>Slow or no new growth</small></span
+                  ></label
+                >
+              </div>
+            </fieldset>
+            <div class="field-group">
+              <label for="soil">How does the soil feel?</label>
+              <select id="soil" name="soil">
+                <option value="">Choose one</option>
+                <option value="wet">Wet or constantly damp</option>
+                <option value="moist">Slightly moist</option>
+                <option value="dry">Dry several centimetres down</option>
+                <option value="unknown">I haven't checked</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="watering">How often do you water?</label>
+              <select id="watering" name="watering">
+                <option value="">Choose one</option>
+                <option value="often">Very frequently</option>
+                <option value="weekly">About once a week</option>
+                <option value="rarely">Only when I remember</option>
+                <option value="when-dry">When the soil feels dry</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="light">Where does it live?</label>
+              <select id="light" name="light">
+                <option value="">Choose one</option>
+                <option value="direct">Direct sunlight for hours</option>
+                <option value="bright">Bright, indirect light</option>
+                <option value="low">A low-light corner</option>
+                <option value="mixed">It changes throughout the day</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="location">Where are the symptoms?</label>
+              <select id="location" name="location">
+                <option value="">Choose one</option>
+                <option value="old">Mostly older / lower leaves</option>
+                <option value="new">Mostly new / upper leaves</option>
+                <option value="all">Across the whole plant</option>
+                <option value="one">Just one or two leaves</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-footer">
+            <button class="button button-dark" type="submit">
+              See possible causes <span>→</span>
+            </button>
+          </div>
+          <div
+            class="form-error"
+            id="formError"
+            role="alert"
+            aria-live="polite"
+          ></div>
+        </form>
+        <div class="results-panel" id="resultsPanel" hidden aria-live="polite">
+          <div class="results-header">
+            <div>
+              <p class="eyebrow">YOUR PLANT CHECK-IN</p>
+              <h3>Here are a few things to investigate:</h3>
+              <p id="resultIntro"></p>
+            </div>
+            <button
+              class="icon-button"
+              id="closeResults"
+              aria-label="Close results"
+            >
+              ×
+            </button>
+          </div>
+          <div class="results-list" id="resultsList"></div>
+        </div>
+      </section>
+
+      <section class="library-section section-pad" id="library">
+        <div class="section-shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">CHECK OUT A FEW LEAFY FRIENDS</p>
+              <h2>Get a<br /><em>green roommate</em></h2>
+            </div>
+          </div>
+          <div class="plant-grid" id="plantGrid"></div>
+        </div>
+      </section>
+
+      <section class="guides-section section-shell section-pad" id="guides">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TAKE DOWN SOME NOTES</p>
+            <h2>Little lessons for<br /><em>happier</em> plants</h2>
+          </div>
+        </div>
+        <div class="guide-grid">
+          <article class="guide-card guide-large">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1LMVi_c1XhCMdsFMWhKVdJKkjvng3m5IgHYa_qDJ-0JKgUScqT2ieZyc&s=10"
+              alt="Potted plants arranged near a bright window"
+            />
+            <div class="guide-content">
+              <span class="guide-tag">WATERING 101</span>
+              <h3>Before you reach for the watering can</h3>
+              <p>
+                Check the soil first. The top may look dry while the lower soil
+                is still holding moisture.
+              </p>
+              <button class="text-link guide-open" data-guide="watering">
+                Read the guide ↗
+              </button>
+            </div>
+          </article>
+          <article class="guide-card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUVXO4AAdm1AQnEOLNqJDai_VLsmUrg2GRZliSs39H8w&s=10"
+              alt="Close-up of healthy green foliage"
+            />
+            <div class="guide-content">
+              <span class="guide-tag">LIGHT & PLACEMENT</span>
+              <h3>Find your plant's happy place.</h3>
+              <p>
+                Light changes from window to window. Notice how bright a spot
+                feels throughout the day.
+              </p>
+              <button class="text-link guide-open" data-guide="light">
+                Read the guide ↗
+              </button>
+            </div>
+          </article>
+          <article class="guide-card">
+            <img
+              src="https://www.arborday.org/sites/arborday.org/files/styles/embed_large/public/media/2024-10/figure-tree-resource-plant-health-care-what-it-means-you.jpg.webp"
+              alt="Healthy indoor plant leaves"
+            />
+            <div class="guide-content">
+              <span class="guide-tag">LEAF CHECK</span>
+              <h3>A closer look goes a long way.</h3>
+              <p>
+                Check both sides of leaves for tiny pests, sticky residue,
+                webbing or spreading spots.
+              </p>
+              <button class="text-link guide-open" data-guide="leaves">
+                Read the guide ↗
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="detail-dialog" id="detailDialog">
+      <button class="dialog-close" id="dialogClose" aria-label="Close dialog">
+        ×
+      </button>
+      <div id="dialogContent"></div>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>

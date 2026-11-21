@@ -1,0 +1,494 @@
+:root {
+  --forest: #233d32;
+  --terracotta: #cf3070;
+  --line: #dfe2d8;
+  --paper: #f6f8f7;
+  --serif: "Playfair Display", Georgia, serif;
+}
+* {
+  box-sizing: border-box;
+  font-family: roboto;
+}
+html {
+  scroll-padding-top: 90px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: #29352d;
+  font-size: 18px;
+  line-height: 1.6;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--forest);
+}
+em {
+  color: var(--terracotta);
+}
+.section-shell {
+  width: min(1160px, calc(100% - 48px));
+  margin-inline: auto;
+}
+.section-pad {
+  padding-block: 112px;
+}
+
+/* Header */
+.site-header {
+  height: 82px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #efecea;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 2px solid var(--line);
+}
+.brand {
+  font-size: 24px;
+}
+.brand-mark,
+.brand-accent {
+  color: var(--terracotta);
+}
+.main-nav {
+  display: flex;
+  gap: 34px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.header-cta {
+  font-size: 15px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--forest);
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 26px;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  padding-top: 25px;
+}
+h1 {
+  font-size: clamp(62px, 7vw, 94px);
+  line-height: 1.04;
+  margin-bottom: 25px;
+}
+.hero-lede {
+  max-width: 480px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.hero-image-wrap {
+  height: 490px;
+}
+.hero-image-wrap > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 48% 48% 22px 22px;
+}
+
+/* Buttons and links */
+.button {
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 22px;
+  display: inline-flex;
+  gap: 23px;
+  background: var(--forest);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.text-link {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--forest);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Section headings */
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #78846f;
+  margin-bottom: 20px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 42px;
+}
+.section-heading h2 {
+  font-size: clamp(42px, 5vw, 60px);
+  line-height: 1.04;
+  margin: 0;
+}
+.section-description {
+  max-width: 360px;
+  font-size: 15px;
+}
+
+/* Plant doctor */
+.diagnosis-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 34px 38px;
+}
+.form-topline {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 28px;
+}
+.field-group {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.full-width {
+  grid-column: 1/-1;
+}
+.field-group label,
+.field-group legend {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 11px;
+}
+.required {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--terracotta);
+  margin-left: 7px;
+}
+input[type="text"],
+select {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+.symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.symptom-option {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 12px;
+  cursor: pointer;
+}
+.symptom-option:has(input:checked) {
+  border-color: #7f9978;
+  background: #eff4eb;
+}
+.symptom-option input {
+  accent-color: var(--forest);
+}
+.symptom-emoji {
+  font-size: 24px;
+}
+.symptom-option strong,
+.symptom-option small {
+  display: block;
+}
+.symptom-option strong {
+  font-size: 13px;
+  color: var(--forest);
+}
+.symptom-option small {
+  font-size: 12px;
+  color: #92998e;
+}
+.form-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 29px;
+  padding-top: 23px;
+}
+.form-error {
+  color: #a64f3d;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+/* Results */
+.results-panel {
+  margin-top: 28px;
+  background: #edf1e9;
+  border-radius: 22px;
+  padding: 32px;
+}
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.results-header h3 {
+  font: 500 30px/1.2 var(--serif);
+  color: var(--forest);
+}
+.results-header p:not(.eyebrow) {
+  font-size: 14px;
+}
+.icon-button,
+.dialog-close {
+  border: 0;
+  background: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 23px;
+  cursor: pointer;
+  flex: none;
+}
+.results-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+.result-card {
+  background: #fff;
+  border-radius: 13px;
+  padding: 20px;
+  font-size: 14px;
+}
+.result-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.result-card h4 {
+  margin: 0;
+  color: var(--forest);
+  font-size: 16px;
+}
+.match-pill {
+  background: #e8eee2;
+  border-radius: 20px;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.result-card strong {
+  color: var(--forest);
+}
+.solution {
+  background: #f5f6f1;
+  border-radius: 8px;
+  padding: 11px;
+}
+
+/* Plant library */
+.library-section {
+  background: #efecea;
+}
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+}
+.plant-card,
+.guide-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.plant-card img,
+.guide-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+.plant-card-body,
+.guide-content {
+  padding: 17px;
+}
+.plant-card h3 {
+  font: 500 20px var(--serif);
+  color: var(--forest);
+  margin: 0 0 4px;
+}
+.latin {
+  font-size: 13px;
+  font-style: italic;
+  color: #939b8e;
+}
+.plant-meta {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.plant-meta span {
+  font-size: 12px;
+  background: #f0f3ec;
+  border-radius: 20px;
+  padding: 5px 8px;
+}
+.plant-card button {
+  margin-top: 15px;
+}
+
+/* Care guides */
+.guides-section {
+  padding-bottom: 120px;
+}
+.guide-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 18px;
+}
+.guide-large img {
+  height: 245px;
+}
+.guide-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--terracotta);
+}
+.guide-content h3 {
+  font: 500 24px/1.2 var(--serif);
+  color: var(--forest);
+  margin: 11px 0;
+}
+.guide-content p {
+  font-size: 14px;
+}
+
+/* Pop-up */
+.detail-dialog {
+  border: 0;
+  border-radius: 18px;
+  padding: 36px;
+  max-width: 520px;
+  width: calc(100% - 32px);
+}
+.detail-dialog::backdrop {
+  background: rgba(21, 38, 29, 0.55);
+}
+.dialog-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.detail-dialog h3 {
+  font: 500 30px var(--serif);
+  color: var(--forest);
+  margin-right: 35px;
+}
+.detail-dialog p,
+.detail-dialog li {
+  font-size: 15px;
+}
+
+/* Small screens */
+@media (max-width: 900px) {
+  .hero,
+  .guide-grid,
+  .form-grid,
+  .results-list {
+    grid-template-columns: 1fr;
+  }
+  .plant-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .symptom-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .full-width {
+    grid-column: auto;
+  }
+  .section-heading {
+    display: block;
+  }
+  .hero-image-wrap {
+    height: 370px;
+  }
+}
+@media (max-width: 650px) {
+  .section-pad {
+    padding-block: 75px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #efecea;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 18px;
+  }
+  .main-nav.open {
+    display: flex;
+  }
+  .header-cta {
+    display: none;
+  }
+  .symptom-grid,
+  .plant-grid {
+    grid-template-columns: 1fr;
+  }
+}
